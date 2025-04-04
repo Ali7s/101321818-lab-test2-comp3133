@@ -1,0 +1,34 @@
+<div *ngIf="character">
+    <h2>{{ character.name }}</h2>
+    <img [src]="character.image" alt="{{ character.name }}" />
+    <p>House: {{ character.house || 'Unknown' }}</p>
+    <p>Species: {{ character.species }}</p>
+    <p>Wizard: {{ character.wizard ? 'Yes' : 'No' }}</p>
+    <p>Ancestry: {{ character.ancestry }}</p>
+    <p>Actor: {{ character.actor }}</p>
+  </div>
+
+  <!-- characterdetails.component.html -->
+
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span>Character Details</span>
+</mat-toolbar>
+
+<mat-card class="character-details-card">
+  <mat-card-header>
+    <mat-card-title>{{ character.name }}</mat-card-title>
+    <mat-card-subtitle>{{ character.house }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="character.image" alt="Character Image" />
+  <mat-card-content>
+    <p><strong>Species:</strong> {{ character.species }}</p>
+    <p><strong>Actor:</strong> {{ character.actor }}</p>
+    <p><strong>Ancestry:</strong> {{ character.ancestry }}</p>
+    <p><strong>Wand:</strong> {{ character.wand.wood }} wood, {{ character.wand.core }} core, {{ character.wand.length }} cm</p>
+  </mat-card-content>
+</mat-card>
+
+  

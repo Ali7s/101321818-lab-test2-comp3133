@@ -1,0 +1,5 @@
+<label for="house">Filter by House:</label>
+<select id="house" (change)="filterByHouse($event.target.value)">
+  <option value="">All</option>
+  <option *ngFor="let house of houses" [value]="house">{{ house }}</option>
+</select>
